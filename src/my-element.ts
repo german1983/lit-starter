@@ -25,11 +25,26 @@ export class MyElement extends LitElement {
     }
   `;
 
+  static getMetaConfig() {
+    return {
+      controlName: 'Hello World',
+      fallbackDisableSubmit: false,
+      version: '1.2',
+      properties: {
+        who: {
+          type: 'string',
+          title: 'Who',
+          description: 'Who to say hello to'
+        }
+      }
+    };
+  }
+
   /**
    * The name to say "Hello" to.
    */
   @property()
-  name = 'World';
+  name = 'Worldq';
 
   /**
    * The number of times the button has been clicked.
@@ -39,7 +54,7 @@ export class MyElement extends LitElement {
 
   override render() {
     return html`
-      <h1>${this.sayHello(this.name)}!</h1>
+      <h2>${this.sayHello(this.name)}!</h2>
       <button @click=${this._onClick} part="button">
         Click Count: ${this.count}
       </button>
